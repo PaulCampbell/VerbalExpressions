@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>VerbalExpressions</id>
+    <version>0.0.1</version>
+    <authors>Paul Campbell</authors>
+    <owners>Paul Campbell</owners>
+    <projectUrl>https://github.com/PaulCampbell/VerbalExpressions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Fluent Regex builder</description>
+    <tags>Regular expressions</tags>
+  </metadata>
+  <files>
+    <file src="VerbalExpressions\bin\Debug\VerbalExpressions.dll" target="lib\net40" />
+  </files>
+</package>
