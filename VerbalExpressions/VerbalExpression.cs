@@ -32,7 +32,7 @@ namespace VerbalExpressions
 
         public VerbalExpression AnythingBut(string stringToExclude)
         {
-            _regex = _regex + string.Format("(?!{0})", stringToExclude);
+            _regex = _regex + string.Format("(?!{0})(.|\n)*", stringToExclude);
             return this;
         }
 
@@ -44,6 +44,7 @@ namespace VerbalExpressions
 
         public VerbalExpression EndOfLine()
         {
+            _regex = _regex + "$";
             return this;
         }
 

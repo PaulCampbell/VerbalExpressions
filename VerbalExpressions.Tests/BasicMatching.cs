@@ -124,7 +124,33 @@ namespace VerbalExpressions.Tests
             urlRegex.Test(anythingButUrl).ShouldBe(true);
         }
 
+        [Test]
+        public void Matches_EndsWith_Positive()
+        {
+            var urlRegex = new VerbalExpression()
+              .StartOfLine()
+              .Then("http://")
+              .Anything()
+              .Then(".co")
+              .EndOfLine();
 
+            var dotCoUrl = "http://google.co";
+            urlRegex.Test(dotCoUrl).ShouldBe(true);
+        }
+
+        [Test]
+        public void Matches_EndsWith_Negative()
+        {
+            var urlRegex = new VerbalExpression()
+              .StartOfLine()
+              .Then("http://")
+              .Anything()
+              .Then(".co")
+              .EndOfLine();
+
+            var coUkUrl = "http://google.co.uk";
+            urlRegex.Test(coUkUrl).ShouldBe(false);
+        }
 
     }
 }

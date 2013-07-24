@@ -19,6 +19,10 @@ Check the tests for example uses, but the basics:
 
 		urlRegex.Test("https://www.google.com").ShouldBe(true);
 
+		urlRegex.Test("httpT://www.google.com").ShouldBe(false);
+
+		urlRegex.Test("google.com").ShouldBe(false);
+
 
 
 ## Todo:
