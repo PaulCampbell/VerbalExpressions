@@ -1,0 +1,11 @@
+*/bin
+*/obj
+/packages
+_ReSharper.*/
+.*.sw[op]
+*.suo
+*.user
+*.ncrunchsolution
+StyleCop.Cache
+*.nupkg
+publish.bat

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerbalExpressions", "VerbalExpressions\VerbalExpressions.csproj", "{1E821766-73C6-4958-9A74-12A8A530151A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerbalExpressions.Tests", "VerbalExpressions.Tests\VerbalExpressions.Tests.csproj", "{8456599A-6013-4864-AF87-17B14E5A0A61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E821766-73C6-4958-9A74-12A8A530151A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E821766-73C6-4958-9A74-12A8A530151A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E821766-73C6-4958-9A74-12A8A530151A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E821766-73C6-4958-9A74-12A8A530151A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8456599A-6013-4864-AF87-17B14E5A0A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8456599A-6013-4864-AF87-17B14E5A0A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8456599A-6013-4864-AF87-17B14E5A0A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8456599A-6013-4864-AF87-17B14E5A0A61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
