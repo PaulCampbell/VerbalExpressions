@@ -30,6 +30,12 @@ namespace VerbalExpressions
             return this;
         }
 
+        public VerbalExpression AnythingBut(string stringToExclude)
+        {
+            _regex = _regex + string.Format("(?!{0})", stringToExclude);
+            return this;
+        }
+
         public VerbalExpression Maybe(string optionalPart)
         {
             _regex = _regex + string.Format("({0})?", optionalPart);

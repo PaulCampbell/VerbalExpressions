@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Shouldly;
 
 namespace VerbalExpressions.Tests
@@ -11,7 +7,7 @@ namespace VerbalExpressions.Tests
     public class BasicMatching
     {
         [Test]
-        public void Matches_StartsWith_Positive()
+        public void Matches_Then_Positive()
         {
             var urlRegex = new VerbalExpression()
             .StartOfLine()
@@ -25,7 +21,7 @@ namespace VerbalExpressions.Tests
         }
 
         [Test]
-        public void Matches_StartsWith_Negative()
+        public void Matches_Then_Negative()
         {
             var urlRegex = new VerbalExpression()
             .StartOfLine()
@@ -34,6 +30,36 @@ namespace VerbalExpressions.Tests
             .EndOfLine();
 
             var url = "not a url";
+
+            urlRegex.Test(url).ShouldBe(false);
+        }
+
+        [Test]
+        public void Matches_ChainedThen_Positive()
+        {
+            var urlRegex = new VerbalExpression()
+            .StartOfLine()
+            .Then("http")
+            .Then("://")
+            .Anything()
+            .EndOfLine();
+
+            var url = "http://www.google.com";
+
+            urlRegex.Test(url).ShouldBe(true);
+        }
+
+        [Test]
+        public void Matches_ChainedThen_Negative()
+        {
+            var urlRegex = new VerbalExpression()
+            .StartOfLine()
+            .Then("http")
+            .Then("somethingelse")
+            .Anything()
+            .EndOfLine();
+
+            var url = "http://www.google.com";
 
             urlRegex.Test(url).ShouldBe(false);
         }
@@ -71,5 +97,34 @@ namespace VerbalExpressions.Tests
             var withMaybeUrl = "httpT://www.google.com";
             urlRegex.Test(withMaybeUrl).ShouldBe(false);
         }
+
+        [Test]
+        public void Matches_AnythingBut_Positive()
+        {
+            var urlRegex = new VerbalExpression()
+            .StartOfLine()
+            .Then("http://")
+            .AnythingBut("google")
+            .EndOfLine();
+
+            var anythingButUrl = "http://google.com";
+            urlRegex.Test(anythingButUrl).ShouldBe(false);
+        }
+
+        [Test]
+        public void Matches_AnythingBut_Negative()
+        {
+            var urlRegex = new VerbalExpression()
+            .StartOfLine()
+            .Then("http://")
+            .AnythingBut("somethingelse.com")
+            .EndOfLine();
+
+            var anythingButUrl = "http://google.com";
+            urlRegex.Test(anythingButUrl).ShouldBe(true);
+        }
+
+
+
     }
 }
