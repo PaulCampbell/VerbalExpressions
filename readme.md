@@ -29,12 +29,12 @@ Check the tests for example uses, but the basics:
 
 ### Interface
 
- - .StartOfLine()  start the regex 					`_regex = "^";`
- - .Then(string match)  Followed by this string  	`_regex = _regex + match;`
- - .Anything() Followed by anything 					`_regex = _regex + "(.|\n)*";`
- - .AnythingBut(string stringToExclude)				`_regex = _regex + string.Format("(?!{0})(.|\n)*", stringToExclude);`
- - .Maybe(string optionalPart) Possibly followed by	`_regex = _regex + string.Format("({0})?", optionalPart);`
- - .EndOfLine() End of line :)						`_regex = _regex + "$";`
+ - `.StartOfLine()`  start the regex 					
+ - `.Then(string match)`  Followed by this string  	
+ - `.Anything()` Followed by anything 				
+ - `.AnythingBut(string stringToExclude)` Followed by anything _except_	
+ - `.Maybe(string optionalPart)` Possibly followed by	
+ - `.EndOfLine()` End of line :)						
 
 ## Todo:
 Some things to consider... Maybe best to add these as the usecases arise in real projects - don't want this api getting out of hand from the get go! 
